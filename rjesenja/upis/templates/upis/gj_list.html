@@ -1,0 +1,48 @@
+{% extends "upis/base.html" %}
+
+{% block content %}
+
+        <h1 style="margin: 30px">Pregled upisanih gospodarskih jedinica</h1>
+        <div style="margin: 30px">
+            <a class="btn btn-success" href="{% url 'create_gj' %}" style="margin-bottom: 10px">Unos nove GJ</a>
+        {% if gj_list %}
+            <table class="table table-striped">
+                <tr>
+                <th>ušp</th>
+                <th>gj_ID</th>
+                <th>gj</th>                
+                <th>godina</th>
+                <th>površina</th>
+                <th>drvna zaliha</th>
+                <th>prirast</th>
+                <th>etat (ha)</th>
+                <th>etat (m3)</th>
+                <th></th>
+                <th></th>
+                </tr>
+            {% for gj in gj_list %}
+                <tr>
+                    <td>{{ gj.ušp }}</td>
+                    <td>{{ gj.gj_id }}</td>
+                    <td>{{ gj.gj_naziv }}</td>
+                    <td>{{ gj.godina }}</td>
+                    <td>{{ gj.povrsina }}</td>
+                    <td>{{ gj.drvna_zaliha}}</td>
+                    <td>{{ gj.prirast}}</td>
+                    <td>{{ gj.etat_povrsina}}</td>
+                    <td>{{ gj.etat_zaliha}}</td>
+                    <td><a class="btn btn-sm btn-warning" href="{% url 'edit_gj' gj.pk %}">Uredi</a></td>
+                    <td>
+                        <form method="POST" action="{% url 'delete_gj' gj.pk %}">
+                            {% csrf_token %}
+                            <input type="submit" class="btn btn-sm btn-danger" value="Izbriši"></input>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+
+
+{% endblock %}
