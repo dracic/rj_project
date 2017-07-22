@@ -2,15 +2,15 @@
 
 {% block content %}
 
-        <h1 style="margin: 30px">Pregled upisanih gospodarskih jedinica</h1>
-        <div style="margin: 30px">
-            <a class="btn btn-success" href="{% url 'create_gj' %}" style="margin-bottom: 10px">Unos nove GJ</a>
+        <h1>Pregled upisanih gospodarskih jedinica</h1>
+        <div>
+            <a class="btn btn-success" href="{% url 'create_gj' %}">Unos nove GJ</a>
         {% if gj_list %}
-            <table class="table table-striped">
+            <table class="table table-bordered table-striped">
                 <tr>
                 <th>ušp</th>
                 <th>gj_ID</th>
-                <th>gj</th>                
+                <th>gj</th>
                 <th>godina</th>
                 <th>površina</th>
                 <th>drvna zaliha</th>

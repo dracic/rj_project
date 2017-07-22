@@ -1,12 +1,12 @@
 {% extends 'upis/base.html' %}
 
 {% block content %}
-    <h1 style="margin: 30px">{% if gj %}Uredi gospodarsku jedinicu{% else %}Upiši novu gospodarsku jedinicu{% endif%}</h1>
-    <div style="margin: 30px">
-        <form method="POST" action="."> 
+    <h1>{% if gj %}Uredi gospodarsku jedinicu{% else %}Upiši novu gospodarsku jedinicu{% endif%}</h1>
+    <div>
+        <form method="POST" action=".">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" class="btn btn-primary" value="Unos">
+        <input type="submit" class="btn btn-primary" value="Spremi">
         </form>
     </div>
 
