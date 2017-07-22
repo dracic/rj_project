@@ -1,0 +1,13 @@
+{% extends 'upis/base.html' %}
+
+{% block content %}
+
+  <h1>Home Page</h1>
+
+  <ul>
+    <li><a href="{% url 'gj_list' %}">Pregled</a></li>
+    <li><a href="{% url 'create_gj' %}">Upis</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+  </ul>
+
+{% endblock %}
