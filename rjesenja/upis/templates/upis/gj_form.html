@@ -1,7 +1,7 @@
 {% extends 'upis/base.html' %}
 
 {% block content %}
-    <h1>{% if gj %}Uredi gospodarsku jedinicu{% else %}Upiši novu gospodarsku jedinicu{% endif%}</h1>
+    <h1 class="page-header">{% if gj %}Uredi gospodarsku jedinicu{% else %}Upiši novu gospodarsku jedinicu{% endif %}</h1>
     <div>
         <form method="POST" action=".">
         {% csrf_token %}

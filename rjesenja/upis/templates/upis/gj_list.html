@@ -2,7 +2,7 @@
 
 {% block content %}
 
-        <h1>Pregled upisanih gospodarskih jedinica</h1>
+        <h1 class="page-header">Pregled upisanih gospodarskih jedinica</h1>
         <div>
             <a class="btn btn-success" href="{% url 'create_gj' %}">Unos nove GJ</a>
         {% if gj_list %}
@@ -27,7 +27,7 @@
                     <td>{{ gj.gj_naziv }}</td>
                     <td>{{ gj.godina }}</td>
                     <td>{{ gj.povrsina }}</td>
-                    <td>{{ gj.drvna_zaliha}}</td>
+                    <td>{{ gj.drvna_zaliha }}</td>
                     <td>{{ gj.prirast}}</td>
                     <td>{{ gj.etat_povrsina}}</td>
                     <td>{{ gj.etat_zaliha}}</td>
